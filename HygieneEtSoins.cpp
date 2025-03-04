@@ -2,14 +2,19 @@
 
 
 
-HygieneEtSoins::HygieneEtSoins() : volume(0.0), indication_utilisation("") {}
+HygieneEtSoins::HygieneEtSoins() :Categorie(), volume(0.0), indication_utilisation("") {}
 
 
-HygieneEtSoins::HygieneEtSoins(float volume, string indication): volume(volume), indication_utilisation(indication) {}
+HygieneEtSoins::HygieneEtSoins(string indication,float volume, string nom) : Categorie(nom),volume(volume), indication_utilisation(indication) {}
 
+HygieneEtSoins::HygieneEtSoins(Categorie c, float volume, string indication_utilisation, string nomCat)
+    : Categorie(c), volume(volume), indication_utilisation(indication_utilisation)
+{
+    this->setNomCat(nomCat);  
+}
 
-HygieneEtSoins::HygieneEtSoins(const HygieneEtSoins& hygSoi)
-: volume(hygSoi.volume), indication_utilisation(hygSoi.indication_utilisation),compositions(hygSoi.compositions) {}
+HygieneEtSoins::HygieneEtSoins(const HygieneEtSoins& hygSoi): Categorie(hygSoi),volume(hygSoi.volume),
+indication_utilisation(hygSoi.indication_utilisation),compositions(hygSoi.compositions) {}
 
 
 ostream& operator<<(ostream& out,  HygieneEtSoins& hs) {
@@ -65,4 +70,11 @@ int HygieneEtSoins::chercherComposition(CompositionChimique comp) {
         }
     }
     return -1; 
+}
+
+HygieneEtSoins::~HygieneEtSoins() {
+    for (int i = 0; i < compositions.size(); ++i) {
+        delete compositions[i];
+
+    }
 }

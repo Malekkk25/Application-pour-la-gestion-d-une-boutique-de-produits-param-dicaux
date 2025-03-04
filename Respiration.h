@@ -9,7 +9,9 @@ protected:
 
 public:
     Respiration();
-    Respiration(string , string , string ,string , float , float );
+    Respiration( string, string, string, float, float , string = "Respiration");
+    Respiration(Categorie , string , string , string , float , float , string  = "Respiration");
+    Respiration(MaterielMedical& , string , float , float , string  = "Respiration");
     Respiration(const Respiration& resp);
 
     friend ostream& operator<<(ostream& ,  Respiration& );
@@ -26,7 +28,7 @@ public:
     void setTypeRespiratoire(const string& type) { type_respiratoire = type; }
     void setDebitMaximal(float debit) { debit_maximal = debit; }
     void setNiveauBruit(float bruit) { niveau_bruit = bruit; }
-
+    ~Respiration();
 
 };
 

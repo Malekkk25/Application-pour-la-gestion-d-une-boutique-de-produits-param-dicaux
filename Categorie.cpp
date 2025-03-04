@@ -12,7 +12,7 @@ Categorie::Categorie(string nomCat) {
 
 Categorie::Categorie(const Categorie& cat) {
 	nomCat = cat.nomCat;
-	Categorie* c;
+	
 	for (int i = 0; i < cat.produits.size(); i++) {
 		produits.push_back(new Produit(*cat.produits[i]));
 	}
@@ -29,7 +29,7 @@ Categorie::Categorie(const Categorie& cat) {
 
 }
  istream& operator>> (istream& in, Categorie& cat) {
-	 cout << "Donnez le nom de la categorie : ";
+	 cout << "Donnez le nom de la categorie : "<<endl;
 	 in >> cat.nomCat;
 
 	 char choix;
@@ -121,3 +121,4 @@ Categorie::~Categorie() {
 	}
 	produits.clear();
 }
+

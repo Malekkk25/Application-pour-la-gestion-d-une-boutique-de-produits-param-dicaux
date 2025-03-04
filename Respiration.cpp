@@ -2,9 +2,20 @@
 
 Respiration::Respiration() : MaterielMedical(), type_respiratoire(""), debit_maximal(0.0), niveau_bruit(0.0) {}
 
-Respiration::Respiration(string nomCategorie, string marque, string norme_certification,string type_respiratoire, float debit_maximal, float niveau_bruit):MaterielMedical(nomCategorie, marque, norme_certification),
+Respiration::Respiration( string marque, string norme_certification, string type_respiratoire, float debit_maximal, float niveau_bruit , string nomCategorie) :MaterielMedical(nomCategorie, marque, norme_certification),
 type_respiratoire(type_respiratoire), debit_maximal(debit_maximal), niveau_bruit(niveau_bruit) {}
 
+Respiration::Respiration(Categorie c, string marque, string norme_certification, string type_respiratoire, float debit_maximal, float niveau_bruit, string nomCat)
+    : MaterielMedical(c, marque, norme_certification), type_respiratoire(type_respiratoire), debit_maximal(debit_maximal), niveau_bruit(niveau_bruit)
+{
+    this->setNomCat(nomCat);  
+}
+
+Respiration::Respiration(MaterielMedical& materiel, string type_respiratoire, float debit_maximal, float niveau_bruit, string nomCat)
+    : MaterielMedical(materiel), type_respiratoire(type_respiratoire), debit_maximal(debit_maximal), niveau_bruit(niveau_bruit)
+{
+    this->setNomCat(nomCat);  
+}
 Respiration::Respiration(const Respiration& resp): MaterielMedical(resp),
 type_respiratoire(resp.type_respiratoire),debit_maximal(resp.debit_maximal),niveau_bruit(resp.niveau_bruit) {}
 
@@ -45,3 +56,5 @@ void Respiration::traiterPrix(float tva) {
     }
 
 }
+
+Respiration::~Respiration() {}

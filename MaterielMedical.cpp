@@ -1,8 +1,20 @@
 #include "MaterielMedical.h"
 
 MaterielMedical::MaterielMedical() : Categorie(), marque(""), norme_certification("") {}
-MaterielMedical::MaterielMedical(string nom ,string marque ,string norme):Categorie(nom) ,marque(marque),norme_certification(norme){}
-MaterielMedical::MaterielMedical(const MaterielMedical& mat): Categorie(mat), marque(mat.marque), norme_certification(mat.norme_certification) {}
+MaterielMedical::MaterielMedical(string norme, string marque, string  nom) :Categorie(nom), marque(marque), norme_certification(norme) {}
+MaterielMedical::MaterielMedical(Categorie c, string marque, string norme_certification ,string nomCat)
+    : Categorie(c) , marque(marque), norme_certification(norme_certification) {
+    this->setNomCat(nomCat);
+}
+
+MaterielMedical::MaterielMedical(const MaterielMedical& mat)
+    : Categorie(mat),   
+    marque(mat.marque),
+    norme_certification(mat.norme_certification)
+{
+   
+}
+
 
 
 
@@ -41,6 +53,12 @@ void MaterielMedical::traiterPrix(float tva) {
     }
 
 }
+
+
+MaterielMedical::~MaterielMedical(void) {
+   
+}
+
 
 
 

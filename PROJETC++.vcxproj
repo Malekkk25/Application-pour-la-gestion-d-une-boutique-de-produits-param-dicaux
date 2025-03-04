@@ -129,8 +129,10 @@
   <ItemGroup>
     <ClCompile Include="Categorie.cpp" />
     <ClCompile Include="CompositionChimique.cpp" />
+    <ClCompile Include="EquipementMedical.cpp" />
     <ClCompile Include="HygieneEtSoins.cpp" />
     <ClCompile Include="MaterielMedical.cpp" />
+    <ClCompile Include="OrthopedieEtMobilite.cpp" />
     <ClCompile Include="Produit.cpp" />
     <ClCompile Include="PROJETC++.cpp" />
     <ClCompile Include="Respiration.cpp" />
@@ -138,8 +140,10 @@
   <ItemGroup>
     <ClInclude Include="Categorie.h" />
     <ClInclude Include="CompositionChimique.h" />
+    <ClInclude Include="EquipementMedical.h" />
     <ClInclude Include="HygieneEtSoins.h" />
     <ClInclude Include="MaterielMedical.h" />
+    <ClInclude Include="OrthopedieEtMobilite.h" />
     <ClInclude Include="Produit.h" />
     <ClInclude Include="Respiration.h" />
   </ItemGroup>

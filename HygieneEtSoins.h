@@ -11,7 +11,8 @@ protected:
 public:
    
     HygieneEtSoins();
-    HygieneEtSoins(float , string );
+    HygieneEtSoins(string, float, string = "Hygiene Et Soins");
+    HygieneEtSoins(Categorie  ,float , string , string  = "Hygiene Et Soins");
     HygieneEtSoins(const HygieneEtSoins& other);
 
 
@@ -30,6 +31,8 @@ public:
 
     void setVolume(float vol) { volume = vol; }
     void setIndicationUtilisation(const string& indication) { indication_utilisation = indication; }
+
+    ~HygieneEtSoins(void);
 
 };
 

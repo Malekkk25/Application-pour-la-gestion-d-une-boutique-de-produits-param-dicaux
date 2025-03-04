@@ -1,7 +1,6 @@
 #pragma once
 #include "Categorie.h"
-class MaterielMedical :
-    public Categorie
+class MaterielMedical : public virtual Categorie
 {
 protected:
     string marque;
@@ -9,7 +8,9 @@ protected:
 
 public:
     MaterielMedical();
-    MaterielMedical(string , string , string );
+    MaterielMedical(string , string, string = "Materiel Medical");
+    MaterielMedical(Categorie , string , string , string = "Materiel Medical");
+
     MaterielMedical(const MaterielMedical& );
 
     friend ostream& operator<<(ostream& ,  MaterielMedical& );
@@ -24,5 +25,7 @@ public:
 
     void setMarque(string& marque) {this->marque = marque;};
     void setNormeCertification(string norme_certification) {this->norme_certification = norme_certification;};
+
+    ~MaterielMedical(void);
 };
 
