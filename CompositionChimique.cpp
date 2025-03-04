@@ -22,21 +22,21 @@ ostream& operator<<(ostream& out, CompositionChimique& comp) {
 }
 
 istream& operator>>(istream& in, CompositionChimique& comp) {
-    cout << "Entrez le nom : ";
+    cout << "Donnez le nom : ";
     in >> comp.nom;
-    cout << "Entrez la formule chimique : ";
+    cout << "Donnez la formule chimique : ";
     in >> comp.formule;
-    cout << "Entrez l'origine : ";
+    cout << "Donnez l'origine : ";
     in >> comp.origine;
     cout << "La composition est-elle toxique ? (1 = Oui, 0 = Non) : ";
     in >> comp.toxicite;
-    cout << "Entrez la température de décomposition (°C) : ";
+    cout << "Donnez la temperature de decomposition (°C) : ";
     in >> comp.temperature_decomposition;
     return in;
 }
 
-// Opérateur d'égalité
-bool CompositionChimique::operator==(const CompositionChimique& comp) const {
+
+bool CompositionChimique::operator==( CompositionChimique& comp)  {
     return (nom == comp.nom &&
         formule == comp.formule &&
         origine == comp.origine &&
@@ -44,22 +44,6 @@ bool CompositionChimique::operator==(const CompositionChimique& comp) const {
         temperature_decomposition == comp.temperature_decomposition);
 }
 
-// Méthode pour ajouter une composition chimique
-void CompositionChimique::ajouterComposition(const CompositionChimique& comp) {
-    cout << "Ajout de la composition chimique suivante :" << endl;
-    cout << comp << endl;
-}
 
-// Getters
-string CompositionChimique::getNom() const { return nom; }
-string CompositionChimique::getFormule() const { return formule; }
-string CompositionChimique::getOrigine() const { return origine; }
-bool CompositionChimique::getToxicite() const { return toxicite; }
-float CompositionChimique::getTemperatureDecomposition() const { return temperature_decomposition; }
 
-// Setters
-void CompositionChimique::setNom(const string& nom) { this->nom = nom; }
-void CompositionChimique::setFormule(const string& formule) { this->formule = formule; }
-void CompositionChimique::setOrigine(const string& origine) { this->origine = origine; }
-void CompositionChimique::setToxicite(bool toxicite) { this->toxicite = toxicite; }
-void CompositionChimique::setTemperatureDecomposition(float tempDecomp) { this->temperature_decomposition = tempDecomp; }
+

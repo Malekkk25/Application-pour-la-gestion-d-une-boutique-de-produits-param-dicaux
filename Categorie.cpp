@@ -81,15 +81,14 @@ int Categorie::chercherProduit(Produit* p) {
 
 
 void Categorie::supprimerProduit(Produit* p) {
-	int index = chercherProduit(p); 
+	int pos = chercherProduit(p); 
 
-	if (index == -1) {
+	if (pos == -1) {
 		cout << "Le produit n'est pas present dans cette categorie." << endl;
 	}
 	else {
-		cout << "Suppression du produit : " << produits[index]->getNom() << endl;
-		delete produits[index]; 
-		produits.erase(produits.begin() + index); 
+		delete produits[pos]; 
+		produits.erase(produits.begin() + pos);
 
 	}
 }
