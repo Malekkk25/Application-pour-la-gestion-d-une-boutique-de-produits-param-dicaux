@@ -1,10 +1,10 @@
 #include "MaterielMedical.h"
 
 MaterielMedical::MaterielMedical() : Categorie(), marque(""), norme_certification("") {}
-MaterielMedical::MaterielMedical(string norme, string marque, string  nom) :Categorie(nom), marque(marque), norme_certification(norme) {}
-MaterielMedical::MaterielMedical(Categorie c, string marque, string norme_certification ,string nomCat)
-    : Categorie(c) , marque(marque), norme_certification(norme_certification) {
-    this->setNomCat(nomCat);
+
+MaterielMedical::MaterielMedical( string marque, string norme_certification ,string nomCat)
+    : Categorie(nomCat) , marque(marque), norme_certification(norme_certification) {
+   
 }
 
 MaterielMedical::MaterielMedical(const MaterielMedical& mat)

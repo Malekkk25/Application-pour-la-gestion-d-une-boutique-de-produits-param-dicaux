@@ -10,7 +10,6 @@ protected:
 public:
     Respiration();
     Respiration( string, string, string, float, float , string = "Respiration");
-    Respiration(Categorie , string , string , string , float , float , string  = "Respiration");
     Respiration(MaterielMedical& , string , float , float , string  = "Respiration");
     Respiration(const Respiration& resp);
 

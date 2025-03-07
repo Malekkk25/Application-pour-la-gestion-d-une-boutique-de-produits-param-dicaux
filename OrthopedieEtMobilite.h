@@ -9,7 +9,6 @@ protected:
 public:
     OrthopedieEtMobilite();
     OrthopedieEtMobilite( float, string, int , string = "Orthopedie Et Mobilite");
-    OrthopedieEtMobilite(Categorie , float , string , int , string  = "Orthopedie Et Mobilite");
     OrthopedieEtMobilite(const OrthopedieEtMobilite&);
 
     friend ostream& operator<<(ostream&, OrthopedieEtMobilite&);

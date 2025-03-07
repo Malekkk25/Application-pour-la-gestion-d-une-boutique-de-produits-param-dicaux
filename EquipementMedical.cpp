@@ -10,10 +10,25 @@ EquipementMedical::EquipementMedical(MaterielMedical& materiel, OrthopedieEtMobi
     this->setNomCat(nomCat);  
 }
 EquipementMedical::EquipementMedical(const EquipementMedical& autre)
-    : MaterielMedical(autre), OrthopedieEtMobilite(autre), poids(autre.poids), transportable(autre.transportable)
-{}
+    : MaterielMedical(autre), OrthopedieEtMobilite(autre), Categorie(autre),
+    poids(autre.poids), transportable(autre.transportable)
+{
+    
+    this->produits.clear();
+    for (size_t i = 0; i < autre.produits.size(); i++) {
+        this->produits.push_back(new Produit(*autre.produits[i])); 
+    }
+}
 
 
+
+void EquipementMedical::traiterPrix(float tva) {
+    for (int i = 0; i < produits.size(); i++) {
+        float n = produits[i]->getPrix() * (1 + tva / 100);
+        produits[i]->setPrix(n);
+    }
+
+}
 
 
 

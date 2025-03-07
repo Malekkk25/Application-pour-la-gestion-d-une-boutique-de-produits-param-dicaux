@@ -9,12 +9,10 @@ protected:
 public:
     MaterielMedical();
     MaterielMedical(string , string, string = "Materiel Medical");
-    MaterielMedical(Categorie , string , string , string = "Materiel Medical");
-
     MaterielMedical(const MaterielMedical& );
 
-    friend ostream& operator<<(ostream& ,  MaterielMedical& );
-    friend istream& operator>>(istream& , MaterielMedical& );
+    friend ostream& operator<<(ostream& , MaterielMedical& );
+    friend istream& operator>>(istream& ,MaterielMedical& );
     bool operator==(MaterielMedical& ) ;
 
     void traiterPrix(float=30);

@@ -5,12 +5,15 @@
 HygieneEtSoins::HygieneEtSoins() :Categorie(), volume(0.0), indication_utilisation("") {}
 
 
-HygieneEtSoins::HygieneEtSoins(string indication,float volume, string nom) : Categorie(nom),volume(volume), indication_utilisation(indication) {}
+HygieneEtSoins::HygieneEtSoins(string indication, float volume, string nom)
+    : Categorie(nom), volume(volume), indication_utilisation(indication) {
+}
 
-HygieneEtSoins::HygieneEtSoins(Categorie c, float volume, string indication_utilisation, string nomCat)
-    : Categorie(c), volume(volume), indication_utilisation(indication_utilisation)
+
+HygieneEtSoins::HygieneEtSoins( float volume, string indication_utilisation, string nomCat)
+    : Categorie(nomCat), volume(volume), indication_utilisation(indication_utilisation)
 {
-    this->setNomCat(nomCat);  
+   
 }
 
 HygieneEtSoins::HygieneEtSoins(const HygieneEtSoins& hygSoi): Categorie(hygSoi),volume(hygSoi.volume),
@@ -71,7 +74,13 @@ int HygieneEtSoins::chercherComposition(CompositionChimique comp) {
     }
     return -1; 
 }
+void HygieneEtSoins::traiterPrix(float tva) {
+    for (int i = 0; i < produits.size(); i++) {
+        float n = produits[i]->getPrix() * (1 + tva / 100);
+        produits[i]->setPrix(n);
+    }
 
+}
 HygieneEtSoins::~HygieneEtSoins() {
     for (int i = 0; i < compositions.size(); ++i) {
         delete compositions[i];

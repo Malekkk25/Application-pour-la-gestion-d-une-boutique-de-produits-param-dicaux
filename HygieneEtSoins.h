@@ -12,7 +12,7 @@ public:
    
     HygieneEtSoins();
     HygieneEtSoins(string, float, string = "Hygiene Et Soins");
-    HygieneEtSoins(Categorie  ,float , string , string  = "Hygiene Et Soins");
+    HygieneEtSoins(float , string , string  = "Hygiene Et Soins");
     HygieneEtSoins(const HygieneEtSoins& other);
 
 
@@ -24,7 +24,8 @@ public:
     void supprimerComposition(CompositionChimique);
     int chercherComposition(CompositionChimique) ;
 
-   
+    void traiterPrix(float = 12);
+
     float getVolume() const { return volume; }
     string getIndicationUtilisation() const { return indication_utilisation; }
     vector<CompositionChimique*> getCompositions() const { return compositions; }

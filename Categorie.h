@@ -34,7 +34,7 @@ public:
 	Produit produitLePlusCher();
 	Produit produitLeMoinsCher();
 
-	//virtual void traiterPrix(float)=0;
+	virtual void traiterPrix(float)=0;
 
 	virtual ~Categorie(void);
 

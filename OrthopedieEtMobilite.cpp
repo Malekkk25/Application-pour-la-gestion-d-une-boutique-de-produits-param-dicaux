@@ -2,14 +2,10 @@
 
 OrthopedieEtMobilite::OrthopedieEtMobilite() : Categorie(), taille(0.0), material(""), poids_supporte(0) {}
 
-OrthopedieEtMobilite::OrthopedieEtMobilite( float taille, string material, int poids , string nom  ) : Categorie(nom),
-taille(taille), material(material), poids_supporte(poids) {}
 
-OrthopedieEtMobilite::OrthopedieEtMobilite(Categorie c, float taille, string material, int poids_supporte, string nomCat)
-    : Categorie(c), taille(taille), material(material), poids_supporte(poids_supporte)
-{
-    this->setNomCat(nomCat);  
-}
+OrthopedieEtMobilite::OrthopedieEtMobilite( float taille, string material, int poids_supporte, string nomCat)
+    : Categorie(nomCat), taille(taille), material(material), poids_supporte(poids_supporte)
+{}
 
 
 

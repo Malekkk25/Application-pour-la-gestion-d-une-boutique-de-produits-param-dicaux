@@ -15,7 +15,7 @@ public:
 
     EquipementMedical(const EquipementMedical& );
 
-
+    void traiterPrix(float = 20);
     friend ostream& operator<<(ostream& out,  EquipementMedical& );
     friend istream& operator>>(istream& in, EquipementMedical& );
 
