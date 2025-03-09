@@ -16,8 +16,8 @@ public:
     EquipementMedical(const EquipementMedical& );
 
     void traiterPrix(float = 20);
-    friend ostream& operator<<(ostream& out,  EquipementMedical& );
-    friend istream& operator>>(istream& in, EquipementMedical& );
+    friend ostream& operator<<(ostream& ,  EquipementMedical& );
+    friend istream& operator>>(istream& , EquipementMedical& );
 
     bool operator==(EquipementMedical& em);
      ~EquipementMedical();

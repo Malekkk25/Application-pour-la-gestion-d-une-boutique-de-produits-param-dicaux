@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "Categorie.h"
 #include "Produit.h"
 #include "MaterielMedical.h"
@@ -9,22 +9,22 @@ using namespace std;
 
 int main() {
     EquipementMedical equip1;
-    cin >> equip1;  // Demander à l'utilisateur de saisir les informations
+    cin >> equip1;  // Demander Ã  l'utilisateur de saisir les informations
 
-    cout << "Equipement Medical créé: " << endl;
+    cout << "Equipement Medical crÃ©Ã©: " << endl;
     cout << equip1 << endl;  // Afficher les informations saisies
 
     // Test de la recopie
     EquipementMedical equip2 = equip1;  // Constructeur de recopie
-    cout << "Equipement Medical après recopie: " << endl;
+    cout << "Equipement Medical aprÃ¨s recopie: " << endl;
     cout << equip2 << endl;
 
     // Comparaison de deux objets EquipementMedical
     if (equip1 == equip2) {
-        cout << "Les deux équipements médicaux sont identiques." << endl;
+        cout << "Les deux Ã©quipements mÃ©dicaux sont identiques." << endl;
     }
     else {
-        cout << "Les deux équipements médicaux sont différents." << endl;
+        cout << "Les deux Ã©quipements mÃ©dicaux sont diffÃ©rents." << endl;
     }
 
     return 0;

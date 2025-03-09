@@ -16,6 +16,7 @@ public:
 
 	friend ostream& operator<< (ostream&, Produit&);
 	friend istream& operator>> (istream&, Produit&);
+
 	bool operator==(Produit&);
 
 	string getNom()  { return nom; }

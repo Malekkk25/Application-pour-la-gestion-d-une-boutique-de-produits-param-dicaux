@@ -61,6 +61,10 @@ istream& operator>>(istream& in, EquipementMedical& em) {
     return in;
 }
 
+
+
+
+
 bool EquipementMedical::operator==(EquipementMedical& em) {
 
     if (!(MaterielMedical::operator==(static_cast<MaterielMedical&>(em)))) {

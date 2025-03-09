@@ -42,6 +42,8 @@ ostream& operator<<(ostream& out, Produit& p) {
 }
 
 
+
+
 bool Produit::operator==(Produit& p) {
 	if (nom == p.nom && prix == p.prix && qteStock == p.qteStock)
 		return true;

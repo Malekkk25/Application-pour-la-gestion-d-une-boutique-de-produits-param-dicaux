@@ -15,6 +15,8 @@ public:
 
     friend ostream& operator<<(ostream& ,  Respiration& );
     friend istream& operator>>(istream& , Respiration& );
+
+  
     bool operator==( Respiration& resp) ;
 
     void traiterPrix(float=20);

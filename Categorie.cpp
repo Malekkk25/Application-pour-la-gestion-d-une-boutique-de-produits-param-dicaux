@@ -47,6 +47,8 @@ Categorie::Categorie(const Categorie& cat) {
 
 
 
+ 
+
  bool Categorie::operator==( Categorie& cat)  {
 	 if (nomCat != cat.nomCat) return false;
 	 if (produits.size() != cat.produits.size()) return false;

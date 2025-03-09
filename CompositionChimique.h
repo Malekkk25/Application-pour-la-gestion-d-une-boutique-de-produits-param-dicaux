@@ -20,6 +20,7 @@ public:
 
     friend ostream& operator<<(ostream& ,  CompositionChimique& );
     friend istream& operator>>(istream& , CompositionChimique& );
+  
     bool operator==( CompositionChimique& ) ;
 
 

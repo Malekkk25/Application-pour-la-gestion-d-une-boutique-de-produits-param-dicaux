@@ -13,6 +13,9 @@ public:
 
     friend ostream& operator<<(ostream&, OrthopedieEtMobilite&);
     friend istream& operator>>(istream&, OrthopedieEtMobilite&);
+
+
+
     bool operator==(OrthopedieEtMobilite&);
 
     void traiterPrix(float = 23.600);

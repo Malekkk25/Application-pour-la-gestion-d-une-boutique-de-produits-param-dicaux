@@ -18,7 +18,8 @@ public:
 	Categorie(const Categorie&);
 
 	friend ostream& operator<< (ostream&,  Categorie&);
-	friend istream& operator>> (istream&, Categorie&);
+	friend istream& operator>> (istream&, Categorie&);	
+
 
 	bool operator==(Categorie&);
 

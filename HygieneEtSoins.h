@@ -20,6 +20,7 @@ public:
     friend istream& operator>>(istream& , HygieneEtSoins& );
 
 
+
     void ajouterComposition(CompositionChimique );
     void supprimerComposition(CompositionChimique);
     int chercherComposition(CompositionChimique) ;

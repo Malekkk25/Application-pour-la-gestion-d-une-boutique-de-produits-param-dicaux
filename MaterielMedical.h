@@ -13,6 +13,8 @@ public:
 
     friend ostream& operator<<(ostream& , MaterielMedical& );
     friend istream& operator>>(istream& ,MaterielMedical& );
+
+ 
     bool operator==(MaterielMedical& ) ;
 
     void traiterPrix(float=30);

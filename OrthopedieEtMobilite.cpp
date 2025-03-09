@@ -34,6 +34,8 @@ istream& operator>>(istream& in, OrthopedieEtMobilite& ortho) {
     return in;
 }
 
+
+
 bool OrthopedieEtMobilite::operator==(OrthopedieEtMobilite& ortho) {
     return ((Categorie&)(*this) == (Categorie&)(ortho) &&
         taille == ortho.taille &&

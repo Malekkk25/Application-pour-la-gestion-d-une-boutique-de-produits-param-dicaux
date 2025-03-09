@@ -1,4 +1,4 @@
-#include "HygieneEtSoins.h"
+﻿#include "HygieneEtSoins.h"
 
 
 
@@ -44,6 +44,9 @@ istream& operator>>(istream& in, HygieneEtSoins& hs) {
     in >> hs.indication_utilisation;
     return in;
 }
+
+
+
 
 
 void HygieneEtSoins::ajouterComposition(CompositionChimique comp) {
