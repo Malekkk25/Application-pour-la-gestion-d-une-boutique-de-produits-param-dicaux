@@ -127,25 +127,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Admin.cpp" />
     <ClCompile Include="Categorie.cpp" />
     <ClCompile Include="CompositionChimique.cpp" />
+    <ClCompile Include="Conge.cpp" />
+    <ClCompile Include="Date.cpp" />
+    <ClCompile Include="Employe.cpp" />
+    <ClCompile Include="EmployeAdmin.cpp" />
     <ClCompile Include="EquipementMedical.cpp" />
     <ClCompile Include="HygieneEtSoins.cpp" />
     <ClCompile Include="MaterielMedical.cpp" />
     <ClCompile Include="OrthopedieEtMobilite.cpp" />
+    <ClCompile Include="Parapharmacie.cpp" />
+    <ClCompile Include="Personne.cpp" />
     <ClCompile Include="Produit.cpp" />
     <ClCompile Include="PROJETC++.cpp" />
     <ClCompile Include="Respiration.cpp" />
+    <ClCompile Include="Vente.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Admin.h" />
     <ClInclude Include="Categorie.h" />
     <ClInclude Include="CompositionChimique.h" />
+    <ClInclude Include="Conge.h" />
+    <ClInclude Include="Date.h" />
+    <ClInclude Include="Employe.h" />
+    <ClInclude Include="EmployeAdmin.h" />
     <ClInclude Include="EquipementMedical.h" />
     <ClInclude Include="HygieneEtSoins.h" />
     <ClInclude Include="MaterielMedical.h" />
     <ClInclude Include="OrthopedieEtMobilite.h" />
+    <ClInclude Include="Parapharmacie.h" />
+    <ClInclude Include="Personne.h" />
     <ClInclude Include="Produit.h" />
     <ClInclude Include="Respiration.h" />
+    <ClInclude Include="Vente.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

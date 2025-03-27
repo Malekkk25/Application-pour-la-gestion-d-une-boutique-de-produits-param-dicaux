@@ -2,24 +2,22 @@
 
 Respiration::Respiration() : MaterielMedical(), type_respiratoire(""), debit_maximal(0.0), niveau_bruit(0.0) {}
 
-Respiration::Respiration( string marque, string norme_certification, string type_respiratoire, float debit_maximal, float niveau_bruit , string nomCategorie) :MaterielMedical(nomCategorie, marque, norme_certification),
-type_respiratoire(type_respiratoire), debit_maximal(debit_maximal), niveau_bruit(niveau_bruit) {}
-
+/*Respiration::Respiration(string marque, string norme_certification, string type_respiratoire, float debit_maximal, float niveau_bruit,
+    string nomCategorie) :MaterielMedical(nomCategorie, marque, norme_certification),
+type_respiratoire(type_respiratoire), debit_maximal(debit_maximal), niveau_bruit(niveau_bruit) {}*/
 
 Respiration::Respiration(const Respiration& resp): MaterielMedical(resp),
 type_respiratoire(resp.type_respiratoire),debit_maximal(resp.debit_maximal),niveau_bruit(resp.niveau_bruit) {}
 
-
 ostream& operator<<(ostream& out,  Respiration& res) {
     MaterielMedical* mat = &res;
     out << *mat;
+    res.nomCat = "Respiration";
     out << "Type Respiratoire : " << res.type_respiratoire << endl;
     out << "Debit Maximal : " << res.debit_maximal << " L/min" << endl;
     out << "Niveau de Bruit : " << res.niveau_bruit << " dB" << endl;
     return out;
 }
-
-
 istream& operator>>(istream& in, Respiration& res) {
     MaterielMedical* mat = &res;
     in >> *mat;
@@ -32,11 +30,28 @@ istream& operator>>(istream& in, Respiration& res) {
     return in;
 }
 
-bool Respiration::operator==( Respiration& resp)  {
+/*bool Respiration::operator==(Respiration& resp) {
     return ((MaterielMedical&)(*this) == (MaterielMedical&)(resp)) &&
         type_respiratoire == resp.type_respiratoire &&
         debit_maximal == resp.debit_maximal &&
         niveau_bruit == resp.niveau_bruit;
+}*/
+
+
+Respiration& Respiration::operator=( Respiration& res) {
+    if (this != &res) {
+        MaterielMedical* cat1 = this;
+        MaterielMedical* cat2 = &res;
+
+        *cat1 = *cat2;
+
+        type_respiratoire = res.type_respiratoire;
+        debit_maximal = res.debit_maximal;
+        niveau_bruit = res.niveau_bruit;
+        
+       
+    }
+    return *this;
 }
 
 void Respiration::traiterPrix(float tva) {

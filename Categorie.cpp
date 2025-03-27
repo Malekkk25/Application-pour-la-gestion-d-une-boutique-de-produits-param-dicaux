@@ -6,15 +6,13 @@ Categorie::Categorie() {
 	nomCat = "";
 }
 
-Categorie::Categorie(string nomCat) {
-	this->nomCat = nomCat;
-}
 
 Categorie::Categorie(const Categorie& cat) {
 	nomCat = cat.nomCat;
-	
+
 	for (int i = 0; i < cat.produits.size(); i++) {
-		produits.push_back(new Produit(*cat.produits[i]));
+		Produit* p = new Produit(*cat.produits[i]);
+		produits.push_back(p);
 	}
 }
 
@@ -24,14 +22,13 @@ Categorie::Categorie(const Categorie& cat) {
 	 for (int i = 0; i < cat.produits.size(); i++) {
 		 out << "Le produit " << i+1 << "est :" << *(cat.produits[i]) << endl;
 	 }
-
 	 return out;
-
 }
- istream& operator>> (istream& in, Categorie& cat) {
-	 cout << "Donnez le nom de la categorie : "<<endl;
-	 in >> cat.nomCat;
 
+
+ istream& operator>> (istream& in, Categorie& cat) {
+	 /*cout << "Donnez le nom de la categorie : " << endl;
+	 in >> cat.nomCat;*/
 	 char choix;
 	 do {
 		 Produit* p = new Produit(); 
@@ -41,18 +38,13 @@ Categorie::Categorie(const Categorie& cat) {
 		 cout << "Voulez-vous ajouter un autre produit ? (o/n) : ";
 		 in >> choix;
 	 } while (choix == 'o' || choix == 'O');
-
 	 return in;
  }
 
 
-
- 
-
- bool Categorie::operator==( Categorie& cat)  {
+ /*bool Categorie::operator=(Categorie& cat) {
 	 if (nomCat != cat.nomCat) return false;
 	 if (produits.size() != cat.produits.size()) return false;
-
 	 for (int i = 0; i < produits.size(); i++) {
 		 bool ok = false;
 		 for (size_t j = 0; j < cat.produits.size(); j++) {
@@ -64,22 +56,45 @@ Categorie::Categorie(const Categorie& cat) {
 		 if (!ok) return false;
 	 }
 	 return true;
+ }*/
+
+
+ Categorie& Categorie::operator=(const Categorie& cat) {
+	 if (this != &cat) {
+
+		 for (int i = 0; i < produits.size(); i++) {
+			 delete produits[i];
+		 }
+		 produits.clear();
+
+		 nomCat = cat.nomCat;
+		 for (unsigned int i = 0; i < cat.produits.size(); i++)
+		 {
+			 produits.push_back(new Produit(*cat.produits[i]));
+
+		 }
+	}
+
+	 return *this;
+
  }
+
+
+
+
 
 
 
 void Categorie::ajouterProduit(Produit* p) {
 	produits.push_back(p);
 }
-
 int Categorie::chercherProduit(Produit* p) {
 	for (int i = 0; i < produits.size(); i++) {
 		if (*(produits[i]) == *p) {
 			return i; 
 		}
 	}
-	return -1; 
-}
+	return -1; }
 
 
 void Categorie::supprimerProduit(Produit* p) {
@@ -92,17 +107,14 @@ void Categorie::supprimerProduit(Produit* p) {
 		delete produits[pos]; 
 		produits.erase(produits.begin() + pos);
 
-	}
-}
-
+	}}
 
 
 Produit Categorie::produitLePlusCher() {
 	Produit max = *(produits[0]);
 	for (int i = 0; i < produits.size(); i++) {
 		if (produits[i]->getPrix() > max.getPrix())
-			max = *(produits[i]);
-	}
+			max = *(produits[i]);}
 	return max;
 }
 

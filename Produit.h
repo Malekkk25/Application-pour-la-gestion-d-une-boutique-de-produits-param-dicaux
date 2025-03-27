@@ -11,13 +11,16 @@ protected:
 
 public:
 	Produit();
-	Produit(string, float, int);
 	Produit(const Produit&);
+
 
 	friend ostream& operator<< (ostream&, Produit&);
 	friend istream& operator>> (istream&, Produit&);
-
 	bool operator==(Produit&);
+	Produit&  operator=(const Produit&);
+	void modifierProduit(Produit);
+	void ajouterQteStock(int);
+	void diminuerQteStock(int);
 
 	string getNom()  { return nom; }
 	float getPrix()  { return prix; }
@@ -27,10 +30,7 @@ public:
 	void setPrix(float newPrix) { prix = newPrix; }
 	void setQteStock(int newQteStock) { qteStock = newQteStock; }
 
-	void modifierProduit(Produit);
-	void ajouterQteStock(int);
-	void diminuerQteStock(int);
-	~Produit(void);
 
+	~Produit(void);
 };
 
