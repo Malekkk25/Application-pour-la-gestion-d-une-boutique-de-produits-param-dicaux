@@ -1,0 +1,3 @@
+Le libelle du produit : 11
+Le prix du produit : 11
+La quantite du stock du produit : 11

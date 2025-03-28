@@ -1,0 +1,56 @@
+11
+11
+11
+1
+Materiel Medical
+        11         11         11
+
+END_PRODUITS
+11
+11
+END_CAT
+2
+Orthopedie Et Mobilite
+        11         22         22
+
+END_PRODUITS
+22
+22
+22
+END_CAT
+3
+Hygiene Et Soins
+        44         44         44
+
+END_PRODUITS
+44
+44
+        44         44         44          1         44
+
+END_COMPOSITIONS
+END_CAT
+4
+Materiel Medical
+        55         55         55
+
+END_PRODUITS
+55
+55
+55
+55
+55
+END_CAT
+5
+Equipement Medical
+        66         66         66
+
+END_PRODUITS
+66
+66
+66
+66
+66
+66
+1
+END_CAT
+END_PARAPHARMACIE

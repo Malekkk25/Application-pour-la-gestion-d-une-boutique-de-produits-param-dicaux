@@ -1,0 +1,13 @@
+Hygiene Et Soins
+        11         11         11
+
+        22         22         22
+
+END_PRODUITS
+55
+55
+        55         55         55          1         55
+
+        88         88         88          1         88
+
+END_COMPOSITIONS
